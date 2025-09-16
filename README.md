@@ -1,5 +1,5 @@
 # Funcionalidade
-
+## Componente
 ### Table
 ```typescript
 function Table({ className, ...props }: React.ComponentProps<"table">) {
