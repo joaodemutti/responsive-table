@@ -84,7 +84,7 @@ export function TableDemo() {
         <TableRow>
           <TableHead>Invoice</TableHead>
           <TableHead>Status</TableHead>
-          <TableHead minWidth={500}>Method</TableHead>
+          <TableHead minWidth={300}>Method</TableHead>
           <TableHead className="text-right">Amount</TableHead>
         </TableRow>
       </TableHeader>
@@ -161,7 +161,7 @@ export const columns: ColumnMinWidth<Payment>[] = [
     ),
   },
   {
-    minWidth: 500,
+    minWidth: 300,
     accessorKey: "email",
     header: ({ column }) => {
       return (

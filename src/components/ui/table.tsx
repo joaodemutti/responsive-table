@@ -37,10 +37,6 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
           sum += widths[i]
 
           const isLast = i === widths.length - 1
-          if(isLast)
-          {
-            console.log(widths[i],width)
-          }
           
           if (sum <= width) {
 
