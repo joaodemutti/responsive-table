@@ -10,7 +10,6 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
   const isMobile = useIsMobile()
 
   React.useLayoutEffect(() => {
-    let minWidths: number[]
     const handleResize = () => {
       if (containerRef?.current) {
         const container = containerRef?.current
@@ -83,9 +82,11 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
 
     }
     handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [containerRef.current])
+    const observer = new ResizeObserver(handleResize);
+    if(containerRef.current)
+      observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, [containerRef.current, isMobile])
 
   return (
     <div
